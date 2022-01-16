@@ -1,57 +1,28 @@
 <template>
   <div id="app">
-    
-
-     <!--  <h1>Write ur random number {{num}}</h1>
-      <input type="text" v-model="num" placeholder="write a number" > -->
-
-     <!--  <form action="" @submit="prevent">
-        <div>
-          <label for="">Write ur text : </label> <br>
-        <input type="text" @keydown.ctrl="prevent"> <br>
-        </div>
-        <button type="submit" >"Submit"</button>
-      </form> -->
-      
-
-
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld.vue'
+
 export default {
   name: 'App',
-  data(){  
-    return{  
-      text: ""
-    }
-  },
-  methods: {  
-    prevent(e){  
-     e.preventDefault();
-     alert("ok")
-     
-    }
+  components: {
+    HelloWorld
   }
-  
-  
-  /* data(){  return {  
-    num:4
-  }
-  },
-  methods: {  
-    randomnum(){
-    this.num = this.num = Math.random() + 1 
-     
-    }
-  } */
-
-
 }
 </script>
 
 <style>
-form{
-  background: rgb(185, 126, 126);
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
