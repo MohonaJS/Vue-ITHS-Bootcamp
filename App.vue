@@ -1,109 +1,97 @@
 <template>
   <div id="app">
-    <button @click="showModal = true" class="button"> Show Modal  !! </button>
-    <transition name="fade" appear>
-      <div class="modal-overlay" @click="showModal = false" v-if="showModal"></div>
-    </transition>
-
-    <transition name="slide" appear>
-        <div class="modal" v-if="showModal">
-            <h1>Hello vue</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, ad?</p>
-            <button class="button" @click="showModal = false">close</button>
-        </div>
-    </transition>
+    <ol>
+      <li v-for="product in products" :key="product">
+          {{products[2]}}
+      </li>
+    </ol>
   </div>
 </template>
 
 <script>
+
+
 export default {
   name: 'App',
   data(){return{  
-      showModal: true
+      products: [
+  {
+    productId: 1000,
+    productName: 'delightful chocolate Ilise',
+    productImage: 'https://picsum.photos/400?image=659',
+    productStock: 81,
+    productPrice: '23488.67',
+    productSalePrice: '23488.67',
+    rating: 4
+  },
+  {
+    productId: 1009,
+    productName: 'indirect indigo Fiona',
+    productImage: 'https://picsum.photos/400?image=583',
+    productStock: 49,
+    productPrice: '40702.21',
+    productSalePrice: '4477.24',
+    rating: 1
+  },
+  {
+    productId: 1035,
+    productName: 'complicated maroon Esmaria',
+    productImage: 'https://picsum.photos/400?image=648',
+    productStock: 69,
+    productPrice: '3128.23',
+    productSalePrice: '938.47',
+    rating: 4
+  },
+  {
+    productId: 1046,
+    productName: 'voiceless emerald Sarita',
+    productImage: 'https://picsum.photos/400?image=695',
+    productStock: 48,
+    productPrice: '21625.98',
+    productSalePrice: '8001.61',
+    rating: 3
+  },
+  {
+    productId: 1047,
+    productName: 'old lime Elvera',
+    productImage: 'https://picsum.photos/400?image=761',
+    productStock: 4,
+    productPrice: '30869.36',
+    productSalePrice: '30869.36',
+    rating: 5
+  },
+  {
+    productId: 1051,
+    productName: 'unfortunate tan Maris',
+    productImage: 'https://picsum.photos/400?image=622',
+    productStock: 63,
+    productPrice: '39042.14',
+    productSalePrice: '11322.22',
+    rating: 2
+  },
+  {
+    productId: 1063,
+    productName: 'lovely brown Theressa',
+    productImage: 'https://picsum.photos/400?image=891',
+    productStock: 31,
+    productPrice: '40426.73',
+    productSalePrice: '12936.55',
+    rating: 4
+  },
+  {
+    productId: 1068,
+    productName: 'primary gold Tera',
+    productImage: 'https://picsum.photos/400?image=463',
+    productStock: 88,
+    productPrice: '25121.63',
+    productSalePrice: '25121.63',
+    rating: 4
+  }
+]
   }}
 }
 </script>
 
 <style>
-  *  {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body{
-    font-family: sans-serif;
-  }
-  #app {
-    position: relative;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100vw;
-    min-height: 100vh;
-    overflow: hidden;
-  }
-  .button {
-    appearance: none;
-    outline: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: inline-block;
-    padding: 15px 25px;
-    background-image: linear-gradient(to right, blue, green);
-    border-radius: 9px;
-
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    box-shadow: 4px 4px rgb(13, 58, 58);
-    transition: 0.4s ease-out;
-  }
-  .button:hover {
-    box-shadow: 6px 6px rgba(83, 58, 58, 0.5);
-  }
-  .modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 98;
-    background-color: rgba(104, 94, 94, 0.56);
-    
-  }
-  .modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99;
-    width: 100%;
-    max-width: 400px;
-    background-color: white;
-    border-radius: 16px;
-    padding: 30px;
-  }
- .modal h1{
-    color: white;
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-
-  .modal p{
-    color: blue;
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  .fade-enter-active, 
-  .fade-leave-active {
-    transition: opacity 0.5s;
-  }
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
-  }
 </style>
